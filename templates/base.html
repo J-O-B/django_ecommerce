@@ -28,14 +28,26 @@
         {% block extra_js %}
         {% endblock %}
 
-        <title>USB Gadget Store {% block extra_title %}{% endblock %}</title>
+        <!--Facebook SEO-->
+        <meta property="og:title" content="Your Store Template">
+        <meta property="og:description" content="A customizable web store with stripe payments, admin panel and more.">
+        <meta property="og:image" content="{% static 'media/background.jpg' %}">
+        <meta property="og:url" content="">
+
+        <!--Twitter SEO-->
+        <meta name="twitter:title" content="Your Store Template ">
+        <meta name="twitter:description" content=" Offering tour packages for individuals or groups.">
+        <meta name="twitter:image" content="{% static 'media/background.jpg' %}">
+        <meta name="twitter:card" content="summary_large_image">        
+
+        <title>Shop Name {% block extra_title %}{% endblock %}</title>
     </head>
     <body>
         <header class="container-fluid fixed-top">
             <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="logo-font text-black my-0"><strong>Stationary</strong>.ie</h2>
+                        <h2 class="logo-font text-black my-0"><strong>ShopName</strong>.com</h2>
                     </a>
                 </div>
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -99,6 +111,13 @@
                     {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}
                 </nav>
+            </div>
+            <div id="delivery-banner" class="row text-center">
+                <div class="col bg-black text-white">
+                    <h4 class="logo-font my-1">
+                        Free delivery on orders over ${{ free_shipping_threshold }}
+                    </h4>
+                </div>
             </div>
         </header>
 
