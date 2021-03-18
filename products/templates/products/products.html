@@ -14,7 +14,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col mt-3 text-center">
-                <h2 class="logo-font">Products</h2>
+                {% if current_categories != Null %}
+                    {% for x in current_categories %}
+                        <h1 class="logo-font">{{ x|title }}</h1>
+                    {% endfor %}
+                {% else %}
+                    <h1 class="logo-font">Products</h1>
+                {% endif %}
                 <div class="col-12 d-flex justify-content-center">
                     <hr class="w-50 mb-1">
                 </div>
