@@ -47,7 +47,7 @@
             <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="logo-font text-black my-0"><strong>Erika Smells</strong>.com</h2>
+                        <h2 class="logo-font text-black my-0"><strong>Condor-Store</strong>.com</h2>
                     </a>
                 </div>
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -124,7 +124,21 @@
         {% if messages %}
         <div class="message-container">
             {% for message in messages %}
-                {% include 'includes/toasts/toast_success.html' %}
+                {% with message.level as level %}
+                    <!--Level 40 Error-->
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    <!--Level 30 Warning-->
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    <!--Level 25 Success-->
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                    <!--Info-->
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
             {% endfor %}
         </div>
         {% endif %}
