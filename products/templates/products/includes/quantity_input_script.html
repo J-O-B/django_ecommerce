@@ -1,7 +1,7 @@
 <script type="text/javascript">
     function handleEnableDisable(itemId){
         let currentValue = parseInt($(`#id_qty_${itemId}`).val());
-        let minusDisabled = currentValue < 2;
+        let minusDisabled = currentValue < 1;
         let plusDisabled = currentValue > 98;
         $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
         $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
@@ -22,7 +22,9 @@
         e.preventDefault();
         let closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         let currentValue = parseInt($(closestInput).val());
-        $(closestInput).val(currentValue + 1);
+        if ($(closestInput).val() < 99){
+            $(closestInput).val(currentValue + 1);
+        }
         let itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
@@ -32,7 +34,9 @@
         e.preventDefault();
         let closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         let currentValue = parseInt($(closestInput).val());
-        $(closestInput).val(currentValue - 1);
+        if ($(closestInput).val() > 0){
+            $(closestInput).val(currentValue - 1);
+        }
         let itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
