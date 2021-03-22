@@ -118,8 +118,6 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
-
-
 .custom-div{
     width: 95px;
     color: white;
@@ -130,30 +128,39 @@ a.category-badge > span.badge:hover {
 }
 
 .skew{
-    margin-top: -75px;
-    padding-top: 50px;
-    transform: rotate(3deg);
-    background: #000;
+    margin-top: -50px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    transform: rotate(2deg);
     margin-left: -20px;
     margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 300px;
 }
 
 .unskew{
-    margin-top: 150px;
-    transform: rotate(-3deg);
+    margin-top: 50px;
+    transform: rotate(-2deg);
     margin-left: -70px;
-    background: #000;
+    padding-left: 70px;
+    min-height: 300px;
+}
+.spacer{
+    height:100px;
 }
 
 #information{
-    width: calc(100vw + 100px);
-    min-height:450px;
+    margin-top: -150px;
+    margin-bottom: 50px;
+    padding-top: 150px;
+    padding-bottom: 50px;
     z-index: 1;
+    background-color: #000;
 }
 #cards{
     z-index: 9999;
 }
-
 .card-button{
     position: absolute;
     bottom: 10px;
@@ -173,12 +180,54 @@ a.category-badge > span.badge:hover {
     transform: scale(1.1,1.3);
 }
 
-.white-shadow{
+.info-box{
     height: 200px;
-    border: 2px solid #fff;
     text-align: center;
-    width:75%;
+    width: 60%;
     margin: 0 auto;
+}
+.inner-box{
+    margin:15px;
+    height:180px;
+}
+.inner-box:hover{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 3px;
+}
+.background{
+    background: rgb(130, 79, 196);
+}
+.white-shadow{
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 0px #fff,
+                2px 2px 0px #fff,
+                3px 3px 0px #fff,
+                4px 4px 0px #fff,
+                5px 5px 0px #fff,
+                6px 6px 0px #fff;
+    transition: all 0.1s ease-in-out;
+}
+.white-shadow:hover{
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 3px #fff;
+}
+.stripe{
+    background: url('/media/siteImages/stripe.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.productBG{
+    background: url('/media/siteImages/products.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.offerBG{
+    background: url('/media/siteImages/offers.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 /* ------------------------------- bootstrap toasts */
 .toast-header{
