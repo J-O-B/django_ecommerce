@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_list_or_404
+from django.shortcuts import (render, redirect,
+                              reverse, get_object_or_404)
 from django.contrib import messages
 from django.conf import settings
 
@@ -52,21 +53,23 @@ def checkout(request):
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!"
-                    ))
+                    one = "One of the products in your "
+                    two = "bag wasn't found in our database. "
+                    three = "Please call us for assistance!"
+                    messages.error(request, one + two + three)
                     order.delete()
                     return redirect(reverse('view_bag'))
             request.session['save_info'] = 'save_info' in request.POST
-            return redirect(reverse('checkout_success', args=[order, order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]))
         else:
             messages.error(request, "There was an error with your form \
                 Please double check your information")
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            message = "There's nothing in your bag at the moment"
+            messages.error(request, message)
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -93,6 +96,7 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     """
     Handle Successful Checkout
@@ -101,12 +105,12 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
         Your order numer is {order_number}. A confirmation \
-        email will be sent to {order_email}.\
+        email will be sent to {order.email}.\
         Thank You For Your Purchase.')
 
     if 'bag' in request.session:
         del request.session['bag']
-    
+
     template = 'checkout/checkout_success.html'
 
     context = {

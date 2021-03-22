@@ -3,11 +3,28 @@ html {
 }
 
 body {
+    height: auto;
+    width:100%;
+    overflow-x: hidden;
+}
+
+#hero-home{
     background: url('/media/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: 80vh;
     color: #555;
     font-family: 'Lato';
+    width: calc(100vw - 1px);
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+}
+
+.myborder{
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    height:200px;
 }
 
 /* from Bulma */
@@ -101,14 +118,51 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+
+
+.custom-div{
+    width: 95px;
+    color: white;
+    height: 15px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px #fff;
+    margin: 0 auto;
+}
+
+.skew{
+    margin-top: -75px;
+    padding-top: 50px;
+    transform: rotate(3deg);
+    background: #000;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.unskew{
+    margin-top: 150px;
+    transform: rotate(-3deg);
+    background: #000;
+    margin-left: 20px;
+}
+
+#information{
+    width: calc(100vw + 100px);
+    z-index: 1;
+}
+#cards{
+    z-index: 9999;
+}
+
 /* ------------------------------- bootstrap toasts */
 .toast-header{
     position: relative;
 }
+
 .close-toast{
     position: absolute;
     right:10px;
 }
+
 .message-container {
     position: fixed;
     top: 72px;
@@ -179,6 +233,16 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
+/* -------------------------------- Homepage */
+.custom-cards{
+    height: 200px;
+    margin-top: -120px;
+    z-index: 10;
+}
+
+#cards{
+    padding-bottom: 100px;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -211,5 +275,11 @@ a.category-badge > span.badge:hover {
 
     body {
         height: calc(100vh - 116px);
+    }
+}
+
+@media (max-width: 770px){
+    .custom-cards{
+        margin-top: 10px;
     }
 }
