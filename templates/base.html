@@ -42,14 +42,18 @@
         <meta name="twitter:image" content="{% static 'media/background.jpg' %}">
         <meta name="twitter:card" content="summary_large_image">        
 
-        <title>Shop Name {% block extra_title %}{% endblock %}</title>
+        <!--Icon-->
+        <link rel="shortcut icon" type="image/jpg" href="../media/siteImages/favicon.png"/>
+
+        <!--Browser Title-->
+        <title>Easy Shop {% block extra_title %}{% endblock %} Malta</title>
     </head>
     <body>
         <header class="container-fluid fixed-top">
             <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="logo-font text-black my-0"><strong>Condor-Store</strong>.com</h2>
+                        <h2 class="text-black my-0"><strong class="logo-font">Easy Sh<span class="logoImg"><img src="../media/siteImages/favicon.png" alt="Maltese flag"></span>p</strong> <span class="text-muted">Malta</span></h2>
                     </a>
                 </div>
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">

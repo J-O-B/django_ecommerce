@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -11,8 +12,6 @@
 
 {% block content %}
 <div class="background">
-
-
     <div id="hero-home">
         <div class="container-fluid h-100">
             <div class="row no-gutters h-100">
@@ -30,10 +29,10 @@
     <section id="cards">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-sm-12 col-md-4 custom-cards">
-                    <div class="card text-center">
-                        <div class="card-header text-white bg-secondary"><strong>Secure Checkout</strong></div>
-                        <div class="card-body myborder">
+                <div class="col-sm-12 col-md-4">
+                    <div class="card text-center myborder custom-cards">
+                        <div class="card-header text-black primary-color"><strong>Secure Checkout</strong></div>
+                        <div class="card-body">
                             <h5 class="card-title">Shop With Peace Of Mind</h5>
                             <p class="card-text">All orders from this site are handled by an industry leading payment processing company.</p>
                             <div class="relative w-100">
@@ -42,10 +41,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 custom-cards">
-                    <div class="card text-center">
-                        <div class="card-header text-white bg-secondary"><strong>Product Range</strong></div>
-                        <div class="card-body myborder">
+                <div class="col-sm-12 col-md-4">
+                    <div class="card text-center myborder custom-cards">
+                        <div class="card-header text-black primary-color"><strong>Product Range</strong></div>
+                        <div class="card-body">
                             <h5 class="card-title">Over 500 Products</h5>
                             <p class="card-text">A wide range of products across multiple categories. Browse them all or search and sort products to find the right items for you.</p>
                             <div class="relative w-100">
@@ -54,10 +53,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 custom-cards">
-                    <div class="card text-center">
-                        <div class="card-header text-white bg-secondary"><strong>Special Offers</strong></div>
-                        <div class="card-body myborder">
+                <div class="col-sm-12 col-md-4">
+                    <div class="card text-center myborder custom-cards">
+                        <div class="card-header text-black primary-color"><strong>Special Offers</strong></div>
+                        <div class="card-body">
                             <h5 class="card-title">Daily Deals & More</h5>
                             <p class="card-text">Browse products that are available at discounted prices through our special offers, daily deals and promotions.</p>
                             <div class="relative w-100">
@@ -73,74 +72,14 @@
         <section id="information">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active security">
-                    <div class="row" id="security">
-                        <div class="col-12 text-center">
-                            <h2 class="text-white logo-font">Secure Checkout</h2>
-                            <hr class="custom-div">
-                            <div class="row info-box mb-5">
-                                <div class="col-12 col-sm-12 col-md-6">
-                                    <div class="inner-box white-shadow text-white">
-                                        <p class="mt-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, voluptatibus modi quidem, autem tenetur maxime 
-                                            quos amet quo fuga atque debitis perferendis impedit? Minus at nihil minima. Quos, ut provident.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-6">
-                                    <div class="inner-box white-shadow stripe">
-                                        <!--Stripe Image-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>    
+                <div class="carousel-item active">
+                    
                 </div>
-                <div class="carousel-item products">
-                    <div class="row" id="product-range">
-                        <div class="col-12 text-center">
-                            <h2 class="text-white logo-font">Product Range</h2>
-                            <hr class="custom-div">
-                            <div class="row info-box mb-5">
-                                <div class="col-12 col-sm-12 col-md-6">
-                                    <div class="inner-box white-shadow productBG">
-                                        <!--Product Image-->
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-6">
-                                    <div class="inner-box white-shadow text-white">
-                                        <p class="mt-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, voluptatibus modi quidem, autem tenetur maxime 
-                                            quos amet quo fuga atque debitis perferendis impedit? Minus at nihil minima. Quos, ut provident.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>    
+                <div class="carousel-item">
+                    
                 </div>
-                <div class="carousel-item specOffers">
-                    <div class="row" id="special-offers">
-                        <div class="col-12 text-center">
-                            <h2 class="text-white logo-font">Special Offers</h2>
-                            <hr class="custom-div">
-                            <div class="row info-box mb-5">
-                                <div class="col-12 col-sm-12 col-md-6">
-                                    <div class="inner-box white-shadow text-white">
-                                        <p class="mt-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, voluptatibus modi quidem, autem tenetur maxime 
-                                            quos amet quo fuga atque debitis perferendis impedit? Minus at nihil minima. Quos, ut provident.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-6">
-                                    <div class="inner-box white-shadow offerBG">
-                                        <!--Offer Image-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>     
+                <div class="carousel-item">
+                     
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -155,17 +94,47 @@
         </section>
 
     <section id="questions">
-        <div class="skew bg-primary mb-5">
-            <div class="unskew">
-                <h1 class="">Next Section</h1>
+        <div class="skew bg-white mb-5">
+            <div class="unskew align-content-sm-center">
+                <div class="col-12 col-sm-10 col-md-6 indent-left">
+                    <h2 class="text-center">Security</h2>
+                    <p class="text-center">
+                        Providing you with the most secure online checkout. Our checkout process uses Stripe,
+                        an industry leading online payments company. Should you wish to view more about Stripe, 
+                        who they are, and how secure they are, please visit 
+                        <a href="https://stripe.com" rel="no-referrer no-follow" target="_blank">Stripe.com</a> 
+                        <span class="text-muted">Opens in a new tab.</span> 
+                    </p>    
+                </div>
+                
             </div>
         </div>
         <div class="row spacer">
-            <!--Spacer-->
+            <div class="relative">
+                <div class="text-center">
+                    <h2 class="sign">
+                        <span class="fast-flicker">Exc</span>lu<span class="flicker">si</span>vel<span class="flicker">y</span>
+                        <span class="margin">  </span>
+                        <span class="flicker">I</span><span class="fast-flicker">n</span>
+                        <span class="margin">  </span>
+                        <span class="fast-flicker">Ma</span>l<span class="flicker">t</span><span class="fast-flicker">a</span>    
+                    </h2>
+                </div>      
+            </div>
+            
         </div>
-        <div class="unskew bg-primary mt-5">
-            <div class="skew">
-                <h1 class="mt-5">Second Section</h1>
+        <div class="unskew bg-white mt-5">
+            <div class="skew align-content-sm-center">
+                <div class="col-12 col-sm-10 col-md-6 offset-md-5 indent-right">
+                    <h2 class="mt-5 text-center">Product Range</h2>
+                    <p class="text-center">
+                        Providing you with the most secure online checkout. Our checkout process uses Stripe,
+                        an industry leading online payments company. Should you wish to view more about Stripe, 
+                        who they are, and how secure they are, please visit 
+                        <a href="https://stripe.com" rel="no-referrer no-follow" target="_blank">Stripe.com</a> 
+                        <span class="text-muted">Opens in a new tab.</span> 
+                    </p>    
+                </div>
             </div>
         </div>
     </section>
@@ -174,20 +143,20 @@
 {% endblock %}
 {% block post_js %}
 <script>
+    $('.carousel').carousel({
+        interval: 5000
+    })
     $('#goSecurity').click(function(event){
         event.preventDefault();
-        $('#information').find('.active').removeClass('active');
-        $('.security').addClass('active');
+        $('.carousel').carousel(0);
     })
     $('#goProducts').click(function(event){
         event.preventDefault();
-        $('#information').find('.active').removeClass('active');
-        $('.products').addClass('active');
+        $('.carousel').carousel(1);
     })
     $('#specOffers').click(function(event){
         event.preventDefault();
-        $('#information').find('.active').removeClass('active');
-        $('.specOffers').addClass('active');
+        $('.carousel').carousel(2);
     })
 </script>
 {% endblock %}
