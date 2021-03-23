@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -31,7 +30,7 @@
             <div class="row no-gutters">
                 <div class="col-sm-12 col-md-4">
                     <div class="card text-center myborder custom-cards">
-                        <div class="card-header text-black primary-color"><strong>Secure Checkout</strong></div>
+                        <div class="card-header text-white bg-black"><strong>Secure Checkout</strong></div>
                         <div class="card-body">
                             <h5 class="card-title">Shop With Peace Of Mind</h5>
                             <p class="card-text">All orders from this site are handled by an industry leading payment processing company.</p>
@@ -69,94 +68,172 @@
         </div>    
     </section>
     
-        <section id="information">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    
+        <section id="homeCarousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item logoImgs active">
+                        <img src="../../../media/siteImages/logo-20.svg" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>One</h5>
+                            <p>...</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item logoImgs">
+                        <img src="../../../media/siteImages/logo-22.svg" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Two</h5>
+                            <p>...</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item logoImgs">
+                        <img src="../../../media/siteImages/logo-2.svg" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Three</h5>
+                            <p>...</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item logoImgs">
+                        <img src="../../../media/siteImages/logo-12.svg" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Four</h5>
+                            <p>...</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    
-                </div>
-                <div class="carousel-item">
-                     
-                </div>
+                <a class="carousel-control-prev controls-custom" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next controls-custom" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            </div>        
         </section>
+        <section id="page-content">
+            <div class="col-12 text-center">
+                <div class="w-100">
+                    <h2 class="logo-font text-black pt-3">Easy Shop Malta</h2>
+                    <hr class="custom-div">
+                    <h3 class="text-black">About Us, Our Goals & More</h3>
+                    <small class="text-black">Please Select From The Following:</small>
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="p-2">
+                            <button class="btn btn-large text-white bg-black" id="showabout">About Easy Shop</button>
+                        </div>
+                        <div class="p-2">
+                            <button class="btn btn-large text-white bg-black" id="showsecurity">Checkout Security?</button>
+                        </div>
+                        <div class="p-2">
+                            <button class="btn btn-large text-white bg-black" id="showProdRange">Product Range?</button>
+                        </div>
+                        <div class="p-2">
+                            <button class="btn btn-large text-white bg-black">How It Works?</button>
+                        </div>
+                        <div class="p-2">
+                            <button class="btn btn-large text-white bg-black">Item Returns?</button>
+                        </div>
+                        <div class="p-2">
+                            <button class="btn btn-large text-white bg-black">Personal Data</button>
+                        </div>
+                    </div>
+                    <div class="sections">
+                        <div class="row justify-content-center" id="about-us">
+                            <h3 class="logo-font">About Easy Shop Malta</h3>
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="text-muted">For Shop Owners</h4>
+                                <p class="text-black text-justify">
+                                    Easy Shop Malta is a platform which allows shops from around Malta and Gozo to sell items their 
+                                    products online.<br><br>
+                                    Where regular shops might only facilitate sales during office hours, Easy Shop allows shops sell their 
+                                    merchandise 24 hours a day, 7 days a week, regarless if their physical shop is open or not.<br><br>
+                                    This means that as a shop owner, you will be able to capture more sales, boost revenue, whilst not having 
+                                    to pay additional employees for expanded opening hours.                       
+                                </p>
+                                <p class="text-black text-justify">
+                                    To start selling on Easy Shop, please <a href="#">apply here.</a> 
+                                </p>    
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="text-muted">For Buyers</h4>
+                                <p class="text-black text-justify">
+                                    Easy Shop allows you to purchase items from your favorite local outlets. Shop hassel free online, avoid traffic, 
+                                    parking, queues and ultimately save yourself time and money!<br><br>
+                                    As the listed products are only from Maltese & Gozitan shops, you can buy knowing that your product comes from a 
+                                    reputable local shop, a feature that is seldom available when shopping online.<br><br>
 
-    <section id="questions">
-        <div class="skew bg-white mb-5">
-            <div class="unskew align-content-sm-center">
-                <div class="col-12 col-sm-10 col-md-6 indent-left">
-                    <h2 class="text-center">Security</h2>
-                    <p class="text-center">
-                        Providing you with the most secure online checkout. Our checkout process uses Stripe,
-                        an industry leading online payments company. Should you wish to view more about Stripe, 
-                        who they are, and how secure they are, please visit 
-                        <a href="https://stripe.com" rel="no-referrer no-follow" target="_blank">Stripe.com</a> 
-                        <span class="text-muted">Opens in a new tab.</span> 
-                    </p>    
+                                </p>
+                                <p class="text-black text-justify">
+                                    Ordering products on Easy Shop is explained further in the <span class="show-how-it-works"><u>How It Works</u></span> Section.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center" id="security">
+                            <h3 class="logo-font">Secure Checkout</h3>
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="text-muted">For Shop Owners</h4>
+                                <p class="text-black text-justify">
+                                    In order to receive payment, shop owners must have a registered payment method. This is required to facilitate seamless transfer 
+                                    of funds from buyers to your account. Errors in your payment information will result in a broken transaction.
+                                </p>
+                                <h5>What Bank Information Is Needed?</h5>
+                                <p class="text-black text-justify">
+                                    The standard account identifier would be required. Please note that Easy Shop does not ask for sensitive bank information. <br><br>
+                                    Please do not provide any sensitive bank information to us, or others online.
+                                </p>    
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="text-muted">For Buyers</h4>
+                                <p class="text-black text-justify">
+                                    Our checkout is powered by Stripe, an international giant in online payment processing. Although you may save your payment information 
+                                    we would ask you to remain vigilent with your bank details online. 
+                                </p>
+                                <h5>What Bank Information Is Needed To Checkout?</h5>
+                                <p class="text-black text-justify">
+                                    To complete checkout, a card number, cvv and expiry are needed. We will soon add other payment options, via Apple pay and others.
+                                </p>
+                            </div>
+                        </div>    
+                        <div class="row justify-content-center" id="prodRange">
+                            <h3 class="logo-font">Product Range</h3>
+                            <div class="col-12">
+                                <p class="text-black text-justify">
+                                    Although we aim to cover all categories of online shopping, we are currently limited to a selection of specific product 
+                                    categories:
+                                </p>
+                                <p class="text-black">
+                                    <ul class="indent-left">
+                                        <li class="indent-right">Clothing</li>
+                                        <li class="indent-right">Services</li>
+                                        <li class="indent-right">Event Tickets</li>
+                                        <li class="indent-right">Next item</li>
+                                    </ul>
+                                </p>
+                                <p class="text-black text-justify">
+                                    We can only offer products that shop owners elect to post on our website. We welcome all new shops, and products to this website 
+                                    and would encourage 
+                                </p>
+                            </div>
+                        </div> 
+                    </div>
+                    
                 </div>
-                
             </div>
-        </div>
-        <div class="row spacer">
-            <div class="relative">
-                <div class="text-center">
-                    <h2 class="sign">
-                        <span class="fast-flicker">Exc</span>lu<span class="flicker">si</span>vel<span class="flicker">y</span>
-                        <span class="margin">  </span>
-                        <span class="flicker">I</span><span class="fast-flicker">n</span>
-                        <span class="margin">  </span>
-                        <span class="fast-flicker">Ma</span>l<span class="flicker">t</span><span class="fast-flicker">a</span>    
-                    </h2>
-                </div>      
-            </div>
-            
-        </div>
-        <div class="unskew bg-white mt-5">
-            <div class="skew align-content-sm-center">
-                <div class="col-12 col-sm-10 col-md-6 offset-md-5 indent-right">
-                    <h2 class="mt-5 text-center">Product Range</h2>
-                    <p class="text-center">
-                        Providing you with the most secure online checkout. Our checkout process uses Stripe,
-                        an industry leading online payments company. Should you wish to view more about Stripe, 
-                        who they are, and how secure they are, please visit 
-                        <a href="https://stripe.com" rel="no-referrer no-follow" target="_blank">Stripe.com</a> 
-                        <span class="text-muted">Opens in a new tab.</span> 
-                    </p>    
-                </div>
-            </div>
-        </div>
-    </section>
-
+        </section>
+        <div class="row spacer"></div>
 </div>
 {% endblock %}
 {% block post_js %}
+<script src="{% static 'js/home.js' %}"></script> 
 <script>
     $('.carousel').carousel({
-        interval: 5000
-    })
-    $('#goSecurity').click(function(event){
-        event.preventDefault();
-        $('.carousel').carousel(0);
-    })
-    $('#goProducts').click(function(event){
-        event.preventDefault();
-        $('.carousel').carousel(1);
-    })
-    $('#specOffers').click(function(event){
-        event.preventDefault();
-        $('.carousel').carousel(2);
+        interval: 2000,
     })
 </script>
 {% endblock %}
