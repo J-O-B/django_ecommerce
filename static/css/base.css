@@ -213,6 +213,7 @@ input[name="q"]::placeholder{
 
 .custom-toast {
     overflow: visible;
+    z-index: 999999999999999;
 }
 
 .toast-capper {
