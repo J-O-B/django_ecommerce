@@ -38,3 +38,8 @@
             </div>
         </div>
 {% endblock %}
+
+{% block post_js %}
+    {{ block.super }}        
+    <script type="text/javascript" src="{% static 'profiles/js/profile.js' %}"></script>
+{% endblock %}

@@ -201,7 +201,9 @@ input[name="q"]::placeholder{
 
 .close-toast{
     position: absolute;
-    right:10px;
+    top: 0;
+    right: 0;
+    height: 100%;
 }
 
 .message-container {
@@ -213,7 +215,6 @@ input[name="q"]::placeholder{
 
 .custom-toast {
     overflow: visible;
-    z-index: 999999999999999;
 }
 
 .toast-capper {
