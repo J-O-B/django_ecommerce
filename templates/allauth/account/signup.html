@@ -7,19 +7,27 @@
 {% block inner_content %}
     <hr>
     <h2 class="logo-font mb-4">{% trans "Sign Up" %}</h2>
+    <p class="text-muted">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
     <hr>
 
-    <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
-    <div class="row">
-        <div class="col-12 col-md-10 offset-md-1">
-            <div class="col-12 col-md-6">
-                Shop
+    <div class="d-flex flex-row justify-content-around">
+            <div class="p-2">
+                <div class="col-md-5">
+                    <h3 class="text-center logo-font text-success">Open A Shop</h3>
+                    <h5 class="text-center text-muted">Free</h5>
+                    <hr>
+                    <p class="text-black text-center">
+                        <strong>Create a free shop to sell your products to customers all over Malta & Gozo.</strong>
+                    </p>
+                </div>
             </div>
-            <div class="col-12 col-md-6">
-                User
+            <div class="p-2 justify-content-around">
+                <div class="col-md-5">
+                    User
+                </div>
             </div>
-        </div>
+            <p>User should be able to select store or user, then get redirected to accounts/ to complete the applicable signup form.</p>
     </div>
     <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
