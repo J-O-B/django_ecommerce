@@ -30,7 +30,13 @@
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form|crispy }}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
                     <div class="text-end">
                         <a href="{% url 'products' %}" class="btn btn-outline black rounded-0">Cancel</a>
                         <button class="btn btn-black rounded-0" type="submit">Submit Update</button>
@@ -158,6 +164,13 @@
 {% endblock %}
 
 {% block post_js %}
+{{ block.super }}
+    <script type="text/javascript">
+        $('#new-image').change(function(){
+            let file = $('#new-image')[0].files[0];
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        })
+    </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('#store-faq').hide(); 
@@ -173,5 +186,11 @@
             $('#add-authentication-error').show(1000);
             $('#store-faq').hide(500);
         })
+        window.onload = function() {
+            if(!window.location.hash) {
+                window.location = window.location + '#loaded';
+                window.location.reload();
+            }
+        }
     </script>
 {% endblock %}
