@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                {% if request.user.is_authenticated %}
+                    <hr>
+                    <h2 class="logo-font mb-4">Product Management</h2>
+                    <h5 class="text-muted">Edit A Product</h5>
+                    <hr>
+                {% endif %}
+            </div>
+        </div>
+        
+        {% if request.user.is_authenticated %}
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="text-end">
+                        <a href="{% url 'products' %}" class="btn btn-outline black rounded-0">Cancel</a>
+                        <button class="btn btn-black rounded-0" type="submit">Submit Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% else %}
+        <div class="row mt-5">
+            <div class="col-12 col-md-6" id="add-authentication-error">
+                <h3>Authentication Error</h3>
+                <hr class="w-50">
+                <p>
+                    If you would like to start selling products on this website, please <br>
+                    create a Store account, or update your current account to "Store Owner".
+                </p>
+                <p>
+                    Regards,<br>
+                    Giburoo Management.
+                </p>
+                <p class="text-center">
+                    <button class="btn btn-large btn-black rounded-0"
+                        type="button" id="learn-about-stores">
+                        Learn About Stores
+                    </button>      
+                </p>
+            </div>
+            <div class="col-12 col-md-10 offset-md-1" id="store-faq">
+                <h3>Store Account FAQ</h3>
+                <hr class="w-50">
+                <h4 class="text-muted" data-toggle="collapse" data-target="#cost-of-store" aria-expanded="true" aria-controls="collapseExample">
+                    <i class="fas fa-hand-holding-usd text-success"></i> What Is The Cost To Create A Store?
+                </h4>
+                <div class="collapse" id="cost-of-store">
+                    <div class="card card-body">
+                        <h5 class="text-center text-success">
+                            FREE!
+                        </h5>
+                        <p>
+                            Opening a store, as well as future management, listing and 
+                            administrative actions are 100% free, and will remain at 
+                            this rate for the forseeable future.
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="w-50">
+                <h4 class="text-muted" data-toggle="collapse" data-target="#create-a-shop" aria-expanded="true" aria-controls="collapseExample">
+                    <i class="fas fa-store-alt text-success"></i> How Do I Create A Shop? 
+                </h4>
+                <div class="collapse" id="create-a-shop">
+                    <div class="card card-body">
+                        <p>
+                            Creating a shop is a very easy process. You can create a new shop at signup, or ammend your current user account to do this:
+                            <ul>
+                                <li class="text-success mb-2">New Users:</li>
+                                <dl>
+                                    If you are a new user on this platform, simply click the account button (<i class="fas fa-user text-primary small"></i>) located in the 
+                                    navigation bar at the top of the page. Select register, and follow the registration instructions.
+                                </dl>
+                                <hr class="w-50 mb-2">
+                                <li class="text-success">Existing Users:</li>
+                                <dl>
+                                    Existing users on this platform can opt to upgrade their account to a shop at any time. To do this, simply 
+                                    navigate to your profile page, click the "Convert To Shop" (<i class="fas fa-store-alt text-primary small"></i>) 
+                                    button and follow the instructions.
+                                </dl>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="w-50">
+                <h4 class="text-muted" data-toggle="collapse" data-target="#delivery-options" aria-expanded="true" aria-controls="collapseExample">
+                    <i class="fas fa-truck text-success"></i> How Does Delivery & Shipping Work?
+                </h4>
+                <div class="collapse" id="delivery-options">
+                    <div class="card card-body">
+                        <h5 class="text-center text-success">Self Deliver / Malta Post</h5>
+                        <p>
+                            After creating your shop. You will be able to add your products to our platform. When adding products 
+                            you will be required to fill out information about the product. On this form there is an option for 
+                            'Self Delivery' or 'Malta Post'. If Malta Post is selected, the standard shipping cost of €5.00 is added 
+                            automatically to your product. 
+                        </p>
+                        <p>
+                            By selecting 'Self' you can deliver the item to its destination which will be supplied to you once a customer 
+                            purchases your product.
+                        </p>
+                        <h5 class="text-center text-success">Responsibility</h5>
+                        <p>
+                            Once your product sells on our platform, it is your responsibility as a shop owner to deliver, or send 
+                            the product in a timely manner. Shops that receive multiple negative reviews for delivery negligence will 
+                            be removed and / or banned from our platform.
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="w-50">
+                <h4 class="text-muted" data-toggle="collapse" data-target="#who-is-eligible" aria-expanded="true" aria-controls="collapseExample">
+                    <i class="fas fa-user-lock text-success"></i> Who's Can Open A Shop?
+                </h4>
+                <div class="collapse" id="who-is-eligible">
+                    <div class="card card-body">
+                        <h5 class="text-center text-success">Eligibility Criteria:</h5>
+                        <p>
+                            At this time, our platform is only available across the Maltese Islands. Shop owners are expected 
+                            to have products already available in Malta or Gozo to help ensure fast delivery. 
+                        </p>
+                    </div>
+                </div>
+                <h3 class="text-success text-center mt-5 mb-1">
+                    More Frequently Asked Questions Can Be Found Within the FAQ Tab In The Main Menu.
+                </h3>
+                <p class="text-muted text-center">
+                    Please note that we reserve the right to remove products, and / or shops that we believe violate 
+                    our policies.<br>
+                    <button class="btn btn-large btn-black rounded-0" id="close-faq">Close</button>
+                </p>
+            </div>
+
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block post_js %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#store-faq').hide(); 
+            $('#store-faq').children().each(function(){
+                $('.text-muted').css('cursor', 'pointer');
+            })
+        });
+        $('#learn-about-stores').click(function(){
+            $('#store-faq').show(1000);
+            $('#add-authentication-error').hide(500);
+        });
+        $('#close-faq').click(function(){
+            $('#add-authentication-error').show(1000);
+            $('#store-faq').hide(500);
+        })
+    </script>
+{% endblock %}
