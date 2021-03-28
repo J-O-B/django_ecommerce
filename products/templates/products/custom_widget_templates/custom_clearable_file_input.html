@@ -1,0 +1,34 @@
+{% if widget.is_initial %}
+    <p>{{ widget.initial_text }}:</p>
+        <a href="{{ widget.value.url }}">
+            <img src="{{ widget.value.url }}" alt="" width="86" height="96" class="rounded shadow-sm">
+        </a>
+        {% if not widget.required %}
+            <div class="custom-control custom-checkbox mt-2">
+                <input class="custom-control-input" type="checkbox" name="{{ widget.checkbox_name }}" 
+                    id="{{ widget.checkbox_id }}"{% if widget.attrs.disabled %} disabled{% endif %}>
+                <label  class="custom-control-label text-danger" for="{{ widget.checkbox_id }}">
+                    {{ widget.clear_checkbox_label }}
+                </label>    
+            </div>
+        {% endif %}
+        <br>
+    {{ widget.input_text }}
+{% endif %}
+<p class="bg-black rounded-0 text-center text-white pb-2">
+    Select Image <br>
+    <span>
+        <input hidden="true" id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+        <button class="btn btn-large btn-success" id="addImage">Choose Photo</button>
+    </span> 
+</p>
+<strong>
+    <p class="text-black" id="filename"></p>
+</strong>
+
+<script type="text/javascript">
+        $('#addImage').click(function(event){
+            event.preventDefault();
+            $('#new-image').trigger('click');
+        })
+</script>
