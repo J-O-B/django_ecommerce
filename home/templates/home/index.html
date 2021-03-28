@@ -4,7 +4,12 @@
 {% block extra_css %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-<link rel="stylesheet" href="{% static 'css/custom-carousel.css' %}">  
+<link rel="stylesheet" href="{% static 'css/custom-carousel.css' %}"> 
+<style>
+#hero-home{
+    background: url('../../../static/img/background.jpg') no-repeat center center fixed;
+}
+</style> 
 {% endblock %}
 
 {% block page_header %}
@@ -121,8 +126,8 @@
                         <strong>
                             <u>Gibur
                                 <span class="logoImg">
-                                    <img src="../media/siteImages/favicon.png" alt="Maltese flag">
-                                    <img src="../media/siteImages/favicon.png" alt="Maltese flag">
+                                    <img src="{% static 'img/flag.png' %}" alt="Maltese flag">
+                                    <img src="{% static 'img/flag.png' %}" alt="Maltese flag">
                                 </span>
                             </u>
                         </strong>
